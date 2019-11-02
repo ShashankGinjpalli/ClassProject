@@ -1,24 +1,21 @@
 //
-//  ViewController.swift
+//  MapView.swift
 //  ClassProject
 //
-//  Created by Shashank Ginjpalli on 10/30/19.
+//  Created by Shashank Ginjpalli on 11/2/19.
 //  Copyright © 2019 Shashank Ginjpalli. All rights reserved.
 //
 
+import Foundation
+
 import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet weak var movieTable: UITableView!
-    
-    
+class MapView: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func addMovie(_ sender: Any) {
-    }
-    
-}
 
+}

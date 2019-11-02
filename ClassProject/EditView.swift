@@ -1,23 +1,22 @@
 //
-//  ViewController.swift
+//  EditView.swift
 //  ClassProject
 //
-//  Created by Shashank Ginjpalli on 10/30/19.
+//  Created by Shashank Ginjpalli on 11/2/19.
 //  Copyright © 2019 Shashank Ginjpalli. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet weak var movieTable: UITableView!
-    
+class EditView: UIViewController {
+    @IBOutlet weak var movieImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func addMovie(_ sender: Any) {
+    @IBAction func editImage(_ sender: Any) {
     }
     
 }
