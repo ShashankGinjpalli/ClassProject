@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0CF0EC237258D200C88F4B /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CF0EA237258D200C88F4B /* Movie+CoreDataClass.swift */; };
+		4D0CF0ED237258D200C88F4B /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CF0EB237258D200C88F4B /* Movie+CoreDataProperties.swift */; };
 		4D27D16A236E33FE0088F766 /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27D169236E33FE0088F766 /* DetailedView.swift */; };
 		4D27D16C236E34510088F766 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27D16B236E34510088F766 /* EditView.swift */; };
 		4D27D16E236E34880088F766 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27D16D236E34880088F766 /* MapView.swift */; };
 		4D27D172236E3F170088F766 /* movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27D171236E3F170088F766 /* movies.swift */; };
+		4D27D174236E4BCE0088F766 /* movieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27D173236E4BCE0088F766 /* movieTableCell.swift */; };
+		4D3C7E352370B5D000B77C61 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3C7E342370B5D000B77C61 /* MapKit.framework */; };
+		4DC64DA9236F52090027FA9A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC64DA8236F52090027FA9A /* AddView.swift */; };
 		4DF09430236A5BCA00BE32F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF0942F236A5BCA00BE32F4 /* AppDelegate.swift */; };
 		4DF09432236A5BCA00BE32F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF09431236A5BCA00BE32F4 /* SceneDelegate.swift */; };
 		4DF09434236A5BCA00BE32F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF09433236A5BCA00BE32F4 /* ViewController.swift */; };
@@ -21,10 +26,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0CF0EA237258D200C88F4B /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4D0CF0EB237258D200C88F4B /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4D27D169236E33FE0088F766 /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 		4D27D16B236E34510088F766 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		4D27D16D236E34880088F766 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		4D27D171236E3F170088F766 /* movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movies.swift; sourceTree = "<group>"; };
+		4D27D173236E4BCE0088F766 /* movieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieTableCell.swift; sourceTree = "<group>"; };
+		4D3C7E342370B5D000B77C61 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4DC64DA8236F52090027FA9A /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		4DF0942C236A5BCA00BE32F4 /* ClassProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF0942F236A5BCA00BE32F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF09431236A5BCA00BE32F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3C7E352370B5D000B77C61 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,9 +61,19 @@
 		4D27D170236E356F0088F766 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4D0CF0EA237258D200C88F4B /* Movie+CoreDataClass.swift */,
+				4D0CF0EB237258D200C88F4B /* Movie+CoreDataProperties.swift */,
 				4D27D171236E3F170088F766 /* movies.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4D3C7E332370B5D000B77C61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D3C7E342370B5D000B77C61 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4DF09423236A5BCA00BE32F4 = {
@@ -60,6 +81,7 @@
 			children = (
 				4DF0942E236A5BCA00BE32F4 /* ClassProject */,
 				4DF0942D236A5BCA00BE32F4 /* Products */,
+				4D3C7E332370B5D000B77C61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +102,8 @@
 				4D27D16B236E34510088F766 /* EditView.swift */,
 				4D27D16D236E34880088F766 /* MapView.swift */,
 				4D27D169236E33FE0088F766 /* DetailedView.swift */,
+				4DC64DA8236F52090027FA9A /* AddView.swift */,
+				4D27D173236E4BCE0088F766 /* movieTableCell.swift */,
 				4DF09431236A5BCA00BE32F4 /* SceneDelegate.swift */,
 				4DF09435236A5BCA00BE32F4 /* Main.storyboard */,
 				4DF0943B236A5BCC00BE32F4 /* Assets.xcassets */,
@@ -165,9 +189,13 @@
 				4DF09434236A5BCA00BE32F4 /* ViewController.swift in Sources */,
 				4D27D172236E3F170088F766 /* movies.swift in Sources */,
 				4DF09430236A5BCA00BE32F4 /* AppDelegate.swift in Sources */,
+				4D0CF0ED237258D200C88F4B /* Movie+CoreDataProperties.swift in Sources */,
 				4D27D16C236E34510088F766 /* EditView.swift in Sources */,
+				4D27D174236E4BCE0088F766 /* movieTableCell.swift in Sources */,
 				4D27D16A236E33FE0088F766 /* DetailedView.swift in Sources */,
 				4DF0943A236A5BCA00BE32F4 /* ClassProject.xcdatamodeld in Sources */,
+				4DC64DA9236F52090027FA9A /* AddView.swift in Sources */,
+				4D0CF0EC237258D200C88F4B /* Movie+CoreDataClass.swift in Sources */,
 				4DF09432236A5BCA00BE32F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

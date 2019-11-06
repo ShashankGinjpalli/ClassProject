@@ -11,6 +11,29 @@ import Foundation
 
 
 class movies{
+    
+    init(){
+        var movie1 = movie(title: "Hola", ID: 20);
+        var movie3 = movie(title: "NO", ID: 20);
+        var movie2 = movie(title: "dshfkjhjkdsf", ID: 20);
+        
+        
+        
+        movies.append(movie1)
+        movies.append(movie2)
+        movies.append(movie3)
+        
+        movie1 = movie(title: "Hola", ID: 20);
+        movie3 = movie(title: "NO", ID: 20);
+        movie2 = movie(title: "dshfkjhjkdsf", ID: 20);
+        
+        movies.append(movie1)
+        movies.append(movie2)
+        movies.append(movie3)
+
+        
+    }
+    
     var movies:[movie] = []
     
     func getMovie(item: Int) -> movie{
@@ -43,11 +66,13 @@ class movie{
     var movieID:Int?
     var movieTitle:String?
     var movieOverView:String?
-    var movieRunTime: String?
+    var movieRunTime: Int?
     var movieReleaseDate: String?
     var movieBudget:Int?
     var movieCast:[String] = []
     var movieWebRatings:[String] = []
+    
+    var movieRating:String?
     
     var movieDirector:String?;
     
