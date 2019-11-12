@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D0CF0EC237258D200C88F4B /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CF0EA237258D200C88F4B /* Movie+CoreDataClass.swift */; };
 		4D0CF0ED237258D200C88F4B /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CF0EB237258D200C88F4B /* Movie+CoreDataProperties.swift */; };
+		4D1E223F2373570D00D757C9 /* searchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E223E2373570D00D757C9 /* searchTableCell.swift */; };
 		4D27D16A236E33FE0088F766 /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27D169236E33FE0088F766 /* DetailedView.swift */; };
 		4D27D16C236E34510088F766 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27D16B236E34510088F766 /* EditView.swift */; };
 		4D27D16E236E34880088F766 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27D16D236E34880088F766 /* MapView.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		4D0CF0EA237258D200C88F4B /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4D0CF0EB237258D200C88F4B /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4D1E223E2373570D00D757C9 /* searchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableCell.swift; sourceTree = "<group>"; };
 		4D27D169236E33FE0088F766 /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 		4D27D16B236E34510088F766 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		4D27D16D236E34880088F766 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				4D27D16D236E34880088F766 /* MapView.swift */,
 				4D27D169236E33FE0088F766 /* DetailedView.swift */,
 				4DC64DA8236F52090027FA9A /* AddView.swift */,
+				4D1E223E2373570D00D757C9 /* searchTableCell.swift */,
 				4D27D173236E4BCE0088F766 /* movieTableCell.swift */,
 				4DF09431236A5BCA00BE32F4 /* SceneDelegate.swift */,
 				4DF09435236A5BCA00BE32F4 /* Main.storyboard */,
@@ -192,6 +195,7 @@
 				4D0CF0ED237258D200C88F4B /* Movie+CoreDataProperties.swift in Sources */,
 				4D27D16C236E34510088F766 /* EditView.swift in Sources */,
 				4D27D174236E4BCE0088F766 /* movieTableCell.swift in Sources */,
+				4D1E223F2373570D00D757C9 /* searchTableCell.swift in Sources */,
 				4D27D16A236E33FE0088F766 /* DetailedView.swift in Sources */,
 				4DF0943A236A5BCA00BE32F4 /* ClassProject.xcdatamodeld in Sources */,
 				4DC64DA9236F52090027FA9A /* AddView.swift in Sources */,

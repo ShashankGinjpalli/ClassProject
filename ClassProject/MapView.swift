@@ -26,10 +26,8 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
-        
-        
-        
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
@@ -39,12 +37,40 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation();
         if let location = locations.last{
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.055, longitudeDelta: 0.055))
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.035, longitudeDelta: 0.035))
             self.map.setRegion(region, animated: true)
-            //            self.map.regionThatFits(region)
-            //            self.map.set
+            
             
         }
+        
+        let request = MKLocalSearch.Request()
+               request.naturalLanguageQuery = "Movie Theater"
+               request.region = map.region
+               let search = MKLocalSearch(request: request)
+               
+               search.start { response, _ in
+                   guard let response = response else {
+                       return
+                   }
+                   print( response.mapItems )
+                   var matchingItems:[MKMapItem] = []
+                   matchingItems = response.mapItems
+                   for i in 1...matchingItems.count - 1
+                   {
+                           let place = matchingItems[i].placemark
+                       
+                       let coordinates = CLLocationCoordinate2D( latitude: (place.location?.coordinate.latitude)!, longitude: (place.location?.coordinate.longitude)!)
+                       let annotation = MKPointAnnotation()
+                       annotation.coordinate = coordinates
+                       annotation.title = place.name
+                           
+                       self.map.addAnnotation(annotation)
+                       
+                   }
+                  
+               }
+        
+        
     }
     
     

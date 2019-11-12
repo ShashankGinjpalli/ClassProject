@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 
-class AddView: UIViewController {
+class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
 
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchTable: UITableView!
     
     
     override func viewDidLoad() {
@@ -22,6 +25,16 @@ class AddView: UIViewController {
         searchField.layer.cornerRadius = 10;
         
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! searchTableCell
+        
+        return cell
     }
 
 
