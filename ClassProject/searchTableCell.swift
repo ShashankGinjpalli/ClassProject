@@ -12,7 +12,6 @@ import UIKit
 class searchTableCell:UITableViewCell{
     @IBOutlet weak var searchImage: UIImageView!
     @IBOutlet weak var searchMovieTitle: UILabel!
-    @IBOutlet weak var searchMovieRating: UILabel!
     
     @IBOutlet weak var customView: UIView!
     @IBOutlet weak var containerView: UIView!

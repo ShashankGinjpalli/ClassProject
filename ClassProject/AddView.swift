@@ -11,6 +11,7 @@ import UIKit
 
 class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var s:searchResults = searchResults();
     
 
     @IBOutlet weak var searchField: UITextField!
@@ -28,16 +29,25 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return self.s.getCount();
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+       
+        
          let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! searchTableCell
+         let searchResult = self.s.getSearchItem(item: indexPath.row);
+        
+        cell.searchMovieTitle.text = searchResult.searchTitle
         
         return cell
     }
 
     @IBAction func getData(_ sender: Any) {
+        
+        self.s.clearSearchResults();
+        
         let movieName = searchField.text;
         
         let urlAsString = "https://api.themoviedb.org/3/search/movie?api_key=bf2c357d63cf76d216fb334f6083eeae&language=en-US&query="+movieName!+"&page=1&include_adult=false"
@@ -59,14 +69,36 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
             print("JSON Error \(err!.localizedDescription)")
         }
 
-        print(jsonResult)
+//        print(jsonResult)
+        
+        var results = jsonResult["results"] as! NSMutableArray
+        
+//        print(results.count);
+        
+        for i in results{
+            var y = i as? [String: AnyObject]
+            self.s.addSearchItem(s: y?["title"] as! String, dt: Data())
+             
+        }
+        
+       
+        DispatchQueue.main.async {
+            self.searchTable.reloadData();
+        }
+        print(self.s.getCount());
+        
+        
 
         })
         
+       
+       
         jsonQuery.resume()
         
-    print("Pressed")
+        
+//    print("Pressed")
         
     }
+    
     
 }
