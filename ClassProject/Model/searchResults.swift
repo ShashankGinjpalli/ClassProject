@@ -16,9 +16,13 @@ class searchResults{
         return searchResults.count
     }
     
-    func addSearchItem(s: String, dt: Data){
-        let s: search = search(st: s, d: dt);
+    func addSearchItem(s: String) -> Void{
+        let s: search = search(st: s, d: Data());
         searchResults.append(s);
+    }
+    
+    func loadImage(n:Int, img:Data) -> Void{
+        getSearchItem(item: n).imageDat = img;
     }
     
     func clearSearchResults(){
@@ -34,6 +38,7 @@ class searchResults{
 class search {
     var searchTitle: String?
     var imageDat: Data?
+    var rls:String?
     
     init(st: String, d: Data){
         self.searchTitle = st
