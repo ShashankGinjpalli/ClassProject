@@ -15,6 +15,8 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var imageURL = "";
     var results:NSMutableArray = []
     
+    var searchObject = search(st: "", d: Data());
+    
     
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
@@ -47,6 +49,10 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchObject = s.getSearchItem(item: indexPath.row);
+    }
+    
     @IBAction func getData(_ sender: Any) {
         
         self.s.clearSearchResults();
@@ -61,15 +67,23 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         var editMovieName = movieName;
         
-        if((editMovieName?.contains(" "))!){
-            editMovieName = (movieName?.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!
-        }
+        editMovieName = movieName!.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        
+//        if((editMovieName?.contains(" "))!){
+//            editMovieName = (movieName?.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!
+//        }
         
         
-        let urlAsString = "https://api.themoviedb.org/3/search/movie?api_key=bf2c357d63cf76d216fb334f6083eeae&language=en-US&query="+editMovieName!+"&page=1&include_adult=false"
+        print(editMovieName)
+        
+        
+        var urlAsString = "https://api.themoviedb.org/3/search/movie?api_key=bf2c357d63cf76d216fb334f6083eeae&language=en-US&query="+editMovieName!+"&page=1&include_adult=false"
         
         self.imageURL = "https://image.tmdb.org/t/p/original"
         
+        
+//        urlAsString = urlAsString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+//        print(urlAsString)
         
         let url = URL(string: urlAsString)!
         let urlSession = URLSession.shared
@@ -100,7 +114,8 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     self.s.addSearchItem(s: y?["title"] as! String)
                 }
                 
-            }else{
+            }
+            if(self.results.count == 0){
                 DispatchQueue.main.async {
                     let alert = UIAlertController(title: "No Movies Found", message: "", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.cancel, handler: nil))
@@ -109,47 +124,49 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
             
             
-           
             
-            
-            for i in 0...self.results.count - 1{
+            if(self.results.count != 0 ){
                 
-                self.imageURL = "https://image.tmdb.org/t/p/original"
-                
-                let y = self.results[i] as? [String: AnyObject]
-                
-                var image = NSString()
-                
-                
-                image = (y!["poster_path"] as? NSString) ?? NSString()
-
-                
-                self.imageURL = self.imageURL+(image as String)
-                
-                let url = URL(string: self.imageURL)!
-                let session = URLSession.shared
-                
-                let dataTask = session.dataTask(with: url, completionHandler: { data, response, error -> Void in
-                    if (error != nil) {
-                        print(error!.localizedDescription)
-                    }
+                // fetching the images
+                for i in 0...self.results.count - 1{
+                    
+                    self.imageURL = "https://image.tmdb.org/t/p/original"
+                    
+                    let y = self.results[i] as? [String: AnyObject]
+                    
+                    var image = NSString()
                     
                     
-                    var err: NSError?
+                    image = (y!["poster_path"] as? NSString) ?? NSString()
                     
                     
-                    self.s.loadImage(n: i, img: data!);
+                    self.imageURL = self.imageURL+(image as String)
+                    
+                    let url = URL(string: self.imageURL)!
+                    let session = URLSession.shared
+                    
+                    let dataTask = session.dataTask(with: url, completionHandler: { data, response, error -> Void in
+                        if (error != nil) {
+                            print(error!.localizedDescription)
+                        }
+                        
+                        
+                        var err: NSError?
+                        
+                        
+                        self.s.loadImage(n: i, img: data!);
+                        
+                        
+                        
+                        
+                    })
                     
                     
+                    dataTask.resume()
                     
+                    print(self.imageURL)
                     
-                })
-                
-                
-                dataTask.resume()
-                
-                print(self.imageURL)
-                
+                }
             }
             
             DispatchQueue.main.async {
@@ -162,11 +179,18 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         jsonQuery.resume()
         
-        
-        
-        
-        
+        sleep(2)
+        self.searchTable.reloadData();
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.searchTable.indexPathForSelectedRow{
+            self.searchTable.deselectRow(at: index, animated: true)
+        }
         
     }
+    
     
 }

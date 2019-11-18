@@ -42,8 +42,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
        }
     
    
-
-    @IBAction func addMovie(_ sender: Any) {
+    @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
+        if let sourceView = segue.source as? AddView {
+            print(sourceView.searchObject);
+            self.movieTable.reloadData()
+        }
     }
     
 }

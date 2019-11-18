@@ -42,19 +42,20 @@
                                                                     <color key="backgroundColor" name="ThemeIndigo"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Results" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-kV-Y3H">
-                                                                    <rect key="frame" x="108" y="12" width="202" height="74"/>
+                                                                    <rect key="frame" x="108" y="12" width="202" height="65"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvA-1R-xWa">
-                                                                    <rect key="frame" x="108" y="94" width="202" height="37"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMR-go-uiD">
+                                                                    <rect key="frame" x="108" y="85" width="202" height="42"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                    <color key="backgroundColor" name="ThemeIndigo"/>
+                                                                    <state key="normal" title="Add Movie">
+                                                                        <color key="titleColor" name="ThemeWhite"/>
+                                                                    </state>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" name="ThemeWhite"/>
                                                         </view>
@@ -65,10 +66,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="ThemeLightGray"/>
                                         <connections>
+                                            <outlet property="addMovie" destination="oMR-go-uiD" id="FA5-jV-kLE"/>
                                             <outlet property="containerView" destination="51Q-Zi-HGG" id="KEe-MW-KLZ"/>
                                             <outlet property="customView" destination="EK0-yd-vm4" id="ka8-rn-jtN"/>
                                             <outlet property="searchImage" destination="C5u-ft-0K2" id="FdY-gk-vqi"/>
                                             <outlet property="searchMovieTitle" destination="0j7-kV-Y3H" id="ezL-T8-iix"/>
+                                            <segue destination="dOL-VH-VTp" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="hR9-JQ-sY3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -121,6 +124,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Her-DV-ndO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dOL-VH-VTp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1861.5999999999999" y="-841.52923538230891"/>
         </scene>
