@@ -48,13 +48,24 @@
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMR-go-uiD">
-                                                                    <rect key="frame" x="108" y="85" width="202" height="42"/>
+                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMR-go-uiD">
+                                                                    <rect key="frame" x="108" y="85" width="103" height="42"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" name="ThemeIndigo"/>
                                                                     <state key="normal" title="Add Movie">
                                                                         <color key="titleColor" name="ThemeWhite"/>
                                                                     </state>
+                                                                </button>
+                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kW-Zn-z3H">
+                                                                    <rect key="frame" x="222" y="85" width="103" height="42"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" name="ThemePurple"/>
+                                                                    <state key="normal" title="Save">
+                                                                        <color key="titleColor" name="ThemeWhite"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <segue destination="dOL-VH-VTp" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="hkY-qx-twm"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" name="ThemeWhite"/>
@@ -69,9 +80,9 @@
                                             <outlet property="addMovie" destination="oMR-go-uiD" id="FA5-jV-kLE"/>
                                             <outlet property="containerView" destination="51Q-Zi-HGG" id="KEe-MW-KLZ"/>
                                             <outlet property="customView" destination="EK0-yd-vm4" id="ka8-rn-jtN"/>
+                                            <outlet property="doneButton" destination="1kW-Zn-z3H" id="lZ4-sg-0NQ"/>
                                             <outlet property="searchImage" destination="C5u-ft-0K2" id="FdY-gk-vqi"/>
                                             <outlet property="searchMovieTitle" destination="0j7-kV-Y3H" id="ezL-T8-iix"/>
-                                            <segue destination="dOL-VH-VTp" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="hR9-JQ-sY3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -158,17 +169,17 @@
                                                             <rect key="frame" x="60" y="98" width="57" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="ThemeNavy"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-N8-N4s">
-                                                            <rect key="frame" x="137" y="92" width="153" height="33"/>
+                                                            <rect key="frame" x="137" y="92" width="58" height="33"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="ThemeNavy"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Edw-wr-x1J">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Edw-wr-x1J">
                                                             <rect key="frame" x="-34" y="-17" width="86" height="120"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" name="ThemeIndigo"/>
@@ -181,6 +192,15 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNz-FV-fI7">
+                                                            <rect key="frame" x="274" y="100" width="40" height="40"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="tintColor" name="ThemePurple"/>
+                                                            <state key="normal" image="checkmark.circle" catalog="system">
+                                                                <color key="titleColor" red="0.92116743329999995" green="0.30045986180000001" blue="0.19992467759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </state>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" name="ThemeWhite"/>
                                                 </view>
@@ -189,10 +209,11 @@
                                         <color key="backgroundColor" name="ThemeLightGray"/>
                                         <connections>
                                             <outlet property="customView" destination="Z0S-Ib-a22" id="yat-Ss-D3O"/>
+                                            <outlet property="markWatchedButton" destination="SNz-FV-fI7" id="JnF-sf-E3O"/>
                                             <outlet property="movieImage" destination="Edw-wr-x1J" id="64h-9w-hEU"/>
                                             <outlet property="movieRating" destination="b8n-N8-N4s" id="xgY-9s-iZM"/>
                                             <outlet property="movieTitle" destination="FK7-lK-9pW" id="9Vl-F6-eC7"/>
-                                            <segue destination="E73-Of-0iQ" kind="show" id="7B4-In-If5"/>
+                                            <segue destination="Jcm-Qq-lBF" kind="show" identifier="Overview" id="fz6-8e-ipa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -221,7 +242,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Go to Maps  " image="map.fill" catalog="system" id="vHm-Gl-rk2">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="Q5t-p0-iAF" kind="show" id="gfQ-va-I5P"/>
+                                <segue destination="Q5t-p0-iAF" kind="show" identifier="" id="gfQ-va-I5P"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -233,43 +254,185 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="138.98050974512745"/>
         </scene>
-        <!--Details-->
-        <scene sceneID="Q6E-b3-wZc">
+        <!--Overview-->
+        <scene sceneID="wOk-bd-xY8">
             <objects>
-                <viewController id="E73-Of-0iQ" customClass="DetailedView" customModule="ClassProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="091-mK-TvO">
+                <viewController id="Jcm-Qq-lBF" customClass="DetailedView" customModule="ClassProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZPz-9O-cpW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="571"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lxQ-e1-RRG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="571"/>
-                                <color key="backgroundColor" name="ThemeLightGray"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="x6v-Vx-alL"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="zcK-5Y-LzD"/>
-                            </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEV-92-ov6">
+                                <rect key="frame" x="16" y="11" width="143" height="203"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="ThemeIndigo"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHE-m5-cjM">
+                                <rect key="frame" x="167" y="16" width="201" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="ThemePurple"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvD-ni-kdt">
+                                <rect key="frame" x="167" y="45" width="201" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ThemeNavy"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Director" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7B-E8-IGz">
+                                <rect key="frame" x="167" y="98" width="201" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="ThemePurple"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Directors" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVn-X4-k9T">
+                                <rect key="frame" x="167" y="127" width="201" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ThemeNavy"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8d-dw-Qsv">
+                                <rect key="frame" x="167" y="193" width="201" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="ThemePurple"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tly-qp-TZK">
+                                <rect key="frame" x="167" y="222" width="201" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ThemeNavy"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-43-n0R">
+                                <rect key="frame" x="42" y="476" width="291" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="ThemePurple"/>
+                                <state key="normal" title="Show More Details">
+                                    <color key="titleColor" name="ThemeWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Z3B-kW-Epm" kind="showDetail" identifier="Details" id="kv9-ak-vgL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbd-nz-qi5">
+                                <rect key="frame" x="26" y="245" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="ThemePurple"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sm-wN-0Ma">
+                                <rect key="frame" x="26" y="274" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ThemeNavy"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODG-9o-83N">
+                                <rect key="frame" x="26" y="334" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="ThemePurple"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OM-Mw-Fpy">
+                                <rect key="frame" x="26" y="363" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ThemeNavy"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="lxQ-e1-RRG" firstAttribute="centerX" secondItem="091-mK-TvO" secondAttribute="centerX" id="MkJ-AL-E95"/>
-                            <constraint firstItem="lxQ-e1-RRG" firstAttribute="leading" secondItem="KlN-kU-a6E" secondAttribute="leading" id="RNm-8i-CBy"/>
-                            <constraint firstItem="lxQ-e1-RRG" firstAttribute="top" secondItem="KlN-kU-a6E" secondAttribute="top" id="XHe-QN-NLO"/>
-                            <constraint firstItem="lxQ-e1-RRG" firstAttribute="bottom" secondItem="KlN-kU-a6E" secondAttribute="bottom" id="rBg-bk-opn"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="KlN-kU-a6E"/>
+                        <color key="backgroundColor" name="ThemeLightGray"/>
+                        <viewLayoutGuide key="safeArea" id="wbW-ZK-vKO"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="E2U-0o-dg4">
-                        <barButtonItem key="rightBarButtonItem" title="Edit Image" id="f9S-KY-XbB">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <navigationItem key="navigationItem" title="Overview" id="h6X-Sc-MRk">
+                        <barButtonItem key="leftBarButtonItem" title="Edit Image" id="LnL-1j-z5w">
                             <connections>
-                                <segue destination="tcv-nk-E5b" kind="showDetail" id="CVb-Rc-7Tz"/>
+                                <segue destination="tcv-nk-E5b" kind="showDetail" id="Yoy-O0-0ys"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="SHp-yV-B4q">
+                            <connections>
+                                <segue destination="0e8-pd-4oE" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="4jv-sP-Iym"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="moreButton" destination="Hpe-43-n0R" id="tfW-Ep-fxE"/>
+                        <outlet property="movieCast" destination="tly-qp-TZK" id="02P-x6-xFM"/>
+                        <outlet property="movieDirector" destination="gVn-X4-k9T" id="aF8-AG-qqm"/>
+                        <outlet property="movieImage" destination="YEV-92-ov6" id="r1O-me-A8X"/>
+                        <outlet property="movieRating" destination="7Sm-wN-0Ma" id="m8r-Gk-Hin"/>
+                        <outlet property="movieRelease" destination="8OM-Mw-Fpy" id="az6-Gd-tOg"/>
+                        <outlet property="movieTitle" destination="CvD-ni-kdt" id="ERQ-Tp-vW4"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MlF-ZD-RZ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Fl-1q-tho" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="0e8-pd-4oE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="510"/>
+            <point key="canvasLocation" x="1860" y="510.49475262368821"/>
+        </scene>
+        <!--More Detailed View-->
+        <scene sceneID="lFq-91-Qfv">
+            <objects>
+                <viewController id="Z3B-kW-Epm" customClass="moreDetailedView" customModule="ClassProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rVh-q5-5tb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Overview" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nR9-Cv-uAe">
+                                <rect key="frame" x="26" y="36" width="322" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="ThemePurple"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ThemeWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfA-3r-GN9">
+                                <rect key="frame" x="26" y="93" width="322" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="ThemeWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" name="ThemeNavy"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGA-tw-RqR">
+                                <rect key="frame" x="26" y="344" width="322" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="ThemePurple"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ThemeWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nt7-6Y-D81">
+                                <rect key="frame" x="26" y="401" width="322" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="ThemeWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="ThemeNavy"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="ThemeLightGray"/>
+                        <viewLayoutGuide key="safeArea" id="dQI-wG-XxA"/>
+                    </view>
+                    <connections>
+                        <outlet property="plot" destination="qfA-3r-GN9" id="AFq-YB-UEr"/>
+                        <outlet property="plotLabel" destination="nR9-Cv-uAe" id="Zu6-6b-fME"/>
+                        <outlet property="ratings" destination="Nt7-6Y-D81" id="GqE-Xj-7OH"/>
+                        <outlet property="ratingsLabel" destination="vGA-tw-RqR" id="LL1-2n-At1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cbH-BL-4ET" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="767.76611694152928"/>
         </scene>
         <!--Edit View-->
         <scene sceneID="JZy-Zk-Jte">
@@ -295,7 +458,7 @@
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0h-Eb-CCX">
                                 <rect key="frame" x="201" y="558" width="158" height="56"/>
-                                <color key="backgroundColor" name="ThemeIndigo"/>
+                                <color key="backgroundColor" name="ThemePurple"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Save Image">
@@ -345,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbm-si-pS7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2580" y="510"/>
+            <point key="canvasLocation" x="2644" y="-146"/>
         </scene>
         <!--Theaters Nearby-->
         <scene sceneID="Ei6-h1-wTV">
@@ -404,6 +567,7 @@
     <resources>
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
+        <image name="checkmark.circle" catalog="system" width="64" height="60"/>
         <image name="map.fill" catalog="system" width="64" height="56"/>
         <image name="photo.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
         <namedColor name="ThemeIndigo">

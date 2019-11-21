@@ -16,6 +16,8 @@ class movieTableCell:UITableViewCell{
     @IBOutlet weak var movieTitle: UILabel!
     
     @IBOutlet weak var customView: UIView!
+    @IBOutlet weak var markWatchedButton: UIButton!
+    
     
     
     override func awakeFromNib() {

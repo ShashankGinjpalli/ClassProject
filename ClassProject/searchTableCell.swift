@@ -13,6 +13,8 @@ class searchTableCell:UITableViewCell{
     @IBOutlet weak var searchImage: UIImageView!
     @IBOutlet weak var searchMovieTitle: UILabel!
     @IBOutlet weak var addMovie: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
+    
     
     @IBOutlet weak var customView: UIView!
     @IBOutlet weak var containerView: UIView!
@@ -25,6 +27,7 @@ class searchTableCell:UITableViewCell{
         
         searchImage.layer.cornerRadius = 10
         addMovie.layer.cornerRadius = 10
+        doneButton.layer.cornerRadius = 10
         
         customView.layer.cornerRadius = 5
         

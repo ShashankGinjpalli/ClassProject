@@ -49,8 +49,9 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         searchObject = s.getSearchItem(item: indexPath.row);
+        self.searchTable.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func getData(_ sender: Any) {
@@ -68,11 +69,7 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var editMovieName = movieName;
         
         editMovieName = movieName!.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        
-//        if((editMovieName?.contains(" "))!){
-//            editMovieName = (movieName?.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!
-//        }
-        
+
         
         print(editMovieName)
         
@@ -157,7 +154,7 @@ class AddView: UIViewController, UITableViewDataSource, UITableViewDelegate {
                         self.s.loadImage(n: i, img: data!);
                         
                         
-                        
+                    
                         
                     })
                     
