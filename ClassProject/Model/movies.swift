@@ -71,7 +71,7 @@ class movies{
             if(results["Response"] as! String == "True"){
          
                 temp.movieOverView = results["Plot"] as! String
-                temp.movieRunTime = results["Runtime"] as! String
+                temp.movieRunTime = results["Runtime"] as? String
                 temp.movieReleaseDate = results["Released"] as! String
                 temp.movieBoxOffice = results["BoxOffice"] as! String
                 temp.movieCast = results["Actors"] as! String

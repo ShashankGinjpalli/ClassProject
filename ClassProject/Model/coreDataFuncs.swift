@@ -89,6 +89,37 @@ class coreDataFuncs {
         }
         
     }
+    
+    func editData (obj: NSManagedObjectContext, movieContainer:movie){
+        let entityDescription =
+            NSEntityDescription.entity(forEntityName: "MovieObj",
+                                       in: obj)
+        let request: NSFetchRequest<MovieObj> = MovieObj.fetchRequest() as! NSFetchRequest<MovieObj>
+        request.entity = entityDescription
+        
+        let pred = NSPredicate(format: "(movieTitle = %@)",movieContainer.movieTitle ?? "")
+        request.predicate = pred
+        
+        do {
+            var results =
+                try obj.fetch(request as!
+                    NSFetchRequest<NSFetchRequestResult>)
+            
+            if results.count > 0 {
+                let match = results[0] as! NSManagedObject
+                match.setValue(movieContainer.moviePoster, forKey: "moviePoster")
+                
+                try obj.save()
+                
+            } else {
+                print("No Match")
+            }
+            
+        } catch let error {
+            print(error)
+        }
+    }
+    
 }
 
 

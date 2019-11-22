@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             temp.movieWebRatings = match.value(forKey: "movieWebRatings") as? String
             temp.movieOverView = match.value(forKey: "moviePlot") as? String
             temp.movieDirector = match.value(forKey: "movieDirector") as? String
-//
+
             m.addMovie(m: temp);
             
         }
@@ -84,8 +84,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
-        
-        
         if(segue.identifier == "Overview"){
             let selectedIndex: IndexPath = self.movieTable.indexPath(for: sender as! UITableViewCell)!
             if let viewController: DetailedView = segue.destination as? DetailedView {
@@ -94,13 +92,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
-    
-    
-    
-    
-    
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         if let index = self.movieTable.indexPathForSelectedRow{
@@ -124,7 +115,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if let sourceView = segue.source as? DetailedView {
             m.editMovie(newImage: sourceView.movieImage.image?.jpegData(compressionQuality: 1.0) ?? Data(), index: index)
-            
+            cdf.editData(obj: managedObjectContext, movieContainer: m.getMovie(item: index))
             self.movieTable.reloadData()
         }
     }

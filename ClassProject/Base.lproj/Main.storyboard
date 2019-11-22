@@ -452,9 +452,9 @@
                                 <color key="tintColor" name="ThemeNavy"/>
                                 <color key="selectedSegmentTintColor" name="ThemeIndigo"/>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jd7-G0-Le4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jd7-G0-Le4">
                                 <rect key="frame" x="16" y="86" width="343" height="443"/>
-                                <color key="backgroundColor" name="ThemeIndigo"/>
+                                <color key="backgroundColor" name="ThemeWhite"/>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0h-Eb-CCX">
                                 <rect key="frame" x="201" y="558" width="158" height="56"/>
