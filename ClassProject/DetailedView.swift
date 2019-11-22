@@ -12,8 +12,6 @@ import UIKit
 
 class DetailedView: UIViewController {
     
-    
-    
     var movieObject:movie?
     
     @IBOutlet weak var movieImage: UIImageView!
@@ -24,7 +22,7 @@ class DetailedView: UIViewController {
     @IBOutlet weak var movieRelease: UILabel!
     @IBOutlet weak var moreButton: UIButton!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,15 +41,26 @@ class DetailedView: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
         if(segue.identifier == "Details"){
-           
+            
             if let viewController: moreDetailedView = segue.destination as? moreDetailedView {
                 viewController.movieObject = self.movieObject
             }
         }
         
-        
-        
+        if(segue.identifier == "Editview"){
+            if let viewController: EditView = segue.destination as? EditView {
+                viewController.movieImageDat = self.movieObject?.moviePoster
+            }
+        }
     }
-
-
+    
+    @IBAction func unwindToDetailedView(segue: UIStoryboardSegue) {
+        if let sourceView = segue.source as? EditView {
+            self.movieObject?.moviePoster = sourceView.movieImage.image?.jpegData(compressionQuality: 1.0);
+            self.movieImage.image = UIImage(data: sourceView.movieImage.image?.jpegData(compressionQuality: 1.0) ?? Data())
+            
+        }
+    }
+    
+    
 }

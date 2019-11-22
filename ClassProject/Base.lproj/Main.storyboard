@@ -355,7 +355,7 @@
                     <navigationItem key="navigationItem" title="Overview" id="h6X-Sc-MRk">
                         <barButtonItem key="leftBarButtonItem" title="Edit Image" id="LnL-1j-z5w">
                             <connections>
-                                <segue destination="tcv-nk-E5b" kind="showDetail" id="Yoy-O0-0ys"/>
+                                <segue destination="tcv-nk-E5b" kind="showDetail" identifier="Editview" id="Yoy-O0-0ys"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="SHp-yV-B4q">
@@ -452,7 +452,7 @@
                                 <color key="tintColor" name="ThemeNavy"/>
                                 <color key="selectedSegmentTintColor" name="ThemeIndigo"/>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jd7-G0-Le4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jd7-G0-Le4">
                                 <rect key="frame" x="16" y="86" width="343" height="443"/>
                                 <color key="backgroundColor" name="ThemeIndigo"/>
                             </imageView>
@@ -464,6 +464,9 @@
                                 <state key="normal" title="Save Image">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="EgX-Df-ign" kind="unwind" unwindAction="unwindToDetailedViewWithSegue:" id="nOn-O4-nbt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBf-K9-ul2">
                                 <rect key="frame" x="16" y="558" width="158" height="56"/>
@@ -502,11 +505,13 @@
                     </view>
                     <connections>
                         <outlet property="editButton" destination="RBf-K9-ul2" id="kdv-pV-7en"/>
+                        <outlet property="imgSource" destination="sPZ-Sd-lHy" id="hTd-aJ-gqd"/>
                         <outlet property="movieImage" destination="Jd7-G0-Le4" id="ono-ob-fSM"/>
                         <outlet property="saveButton" destination="O0h-Eb-CCX" id="Zpg-OF-czu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbm-si-pS7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="EgX-Df-ign" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2644" y="-146"/>
         </scene>

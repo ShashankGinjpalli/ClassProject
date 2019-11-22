@@ -32,15 +32,15 @@ class moreDetailedView:UIViewController{
         
         plot.text = movieObject?.movieOverView ?? "Not Found"
         
-        let ratings = movieObject?.movieWebRatings ?? []
+        let ratings = movieObject?.movieWebRatings ?? "Not Found"
         
-        for i in ratings{
-            var temp = ""
-            temp = i.src! + ": " + i.value! + "\n"
-            str = str + temp
-        }
+//        for i in ratings{
+//            var temp = ""
+//            temp = i.src! + ": " + i.value! + "\n"
+//            str = str + temp
+//        }
         
-        self.ratings.text  = str;
+        self.ratings.text  = ratings
         
     }
     

@@ -12,27 +12,6 @@ import Foundation
 
 class movies{
     
-    init(){
-//        var movie1 = movie(title: "Hola", img:Data());
-//        var movie3 = movie(title: "NO", img:Data());
-//        var movie2 = movie(title: "dshfkjhjkdsf", img:Data());
-//
-//
-//
-//        movies.append(movie1)
-//        movies.append(movie2)
-//        movies.append(movie3)
-//
-//        movie1 = movie(title: "Hola", img:Data());
-//        movie3 = movie(title: "NO", img:Data());
-//        movie2 = movie(title: "dshfkjhjkdsf", img:Data());
-//
-//        movies.append(movie1)
-//        movies.append(movie2)
-//        movies.append(movie3)
-
-        
-    }
     
     var movies:[movie] = []
     
@@ -100,12 +79,11 @@ class movies{
                 let rate = results["Ratings"] as! NSMutableArray
                 for i in rate{
                     let y = i as! [String:String]
-                    let src = y["Source"]
-                    let val = y["Value"]
+                    let src = y["Source"] as! String
+                    let val = y["Value"] as! String
                     
-                    let s = ratings(s: src!, v: val!)
+                    temp.movieWebRatings = (temp.movieWebRatings ?? "") + src + ": " + val + "\n"
                     
-                    temp.movieWebRatings.append(s)
                 }
                 
                 temp.movieRating = results["Rated"] as! String
@@ -119,7 +97,8 @@ class movies{
                 temp.movieReleaseDate = "Not Found"
                 temp.movieBoxOffice = "Not Found"
                 temp.movieCast = "Not Found"
-                temp.movieWebRatings = []
+//                temp.movieWebRatings = []
+                temp.movieWebRatings = "Not Found"
                 
                 temp.movieRating = "Not Found"
                 
@@ -150,7 +129,8 @@ class movie{
     var movieReleaseDate: String?
     var movieBoxOffice:String?
     var movieCast:String?
-    var movieWebRatings:[ratings] = []
+    
+    var movieWebRatings:String?
     var movieRating:String?
     var movieDirector:String?;
     var moviePoster: Data?
@@ -167,13 +147,5 @@ class movie{
    
     
 }
-class ratings{
-       var src: String?
-       var value: String?
-       
-       init(s: String, v: String){
-           self.src = s
-           self.value = v
-       }
-   }
+
 
